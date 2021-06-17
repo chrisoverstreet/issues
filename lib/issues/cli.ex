@@ -9,7 +9,7 @@ defmodule Issues.CLI do
   table of the last _n_ issues in a github project
   """
 
-  def run(argv) do
+  def main(argv) do
     argv
     |> parse_args
     |> process
@@ -56,7 +56,6 @@ defmodule Issues.CLI do
     |> print_table_for_columns(["number", "created_at", "title"])
   end
 
-  @spec decode_response({:ok, any}) :: any
   def decode_response({:ok, body}), do: body
   def decode_response({:error, error}) do
     IO.puts "Error fetching from Github: #{error["message"]}"
