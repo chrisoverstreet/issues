@@ -1,7 +1,7 @@
 defmodule Issues.GithubIssues do
   require Logger
 
-  @user_agent [ {"User-agent", "Elixir christopheroverstreet@gmail.com"} ]
+  @user_agent [{"User-agent", "Elixir christopheroverstreet@gmail.com"}]
 
   def fetch(user, project) do
     Logger.info("Fetching #{user}'s project #{project}")
@@ -17,7 +17,7 @@ defmodule Issues.GithubIssues do
     "#{@github_url}/repos/#{user}/#{project}/issues"
   end
 
-  def handle_response({ _, %{status_code: status_code, body: body }}) do
+  def handle_response({_, %{status_code: status_code, body: body}}) do
     Logger.info("Got response: status code=#{status_code}")
     Logger.debug(fn -> inspect(body) end)
 

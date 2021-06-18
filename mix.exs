@@ -24,10 +24,10 @@ defmodule Issues.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      { :httpoison, "~> 1.0.0" },
-      { :poison, "~> 4.0" },
-      { :ex_doc, "~> 0.24", only: :dev, runtime: false },
-      { :earmark, "~> 1.4", only: :dev, runtime: false  }
+      {:httpoison, "~> 1.0.0"},
+      {:poison, "~> 4.0"},
+      {:ex_doc, "~> 0.24", only: :dev, runtime: false},
+      {:earmark, "~> 1.4", only: :dev, runtime: false}
     ]
   end
 
